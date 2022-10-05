@@ -3,10 +3,10 @@ server:
 
 spring:
   application:
-    name: airport-service
+    name: airport
 
 eureka:
-  clint:
+  client:
     register-with-eureka: true
     fetch-registry: true
     service-url:

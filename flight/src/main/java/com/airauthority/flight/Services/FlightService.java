@@ -31,8 +31,8 @@ public class FlightService implements IFlightService{
         ReturnObjectVO vo = new ReturnObjectVO();
         Flight flight = flightRepository.findById(flightId).get();
         vo.setFlight(flight);
-        Airport originAirport = restTemplate.getForObject("http://airport-service/airports/"+ flight.getOrigin(), Airport.class);
-        Airport destinationAirport = restTemplate.getForObject("http://airport-service/airports/"+ flight.getDestination(), Airport.class);
+        Airport originAirport = restTemplate.getForObject("http://airport/airports/"+ flight.getOrigin(), Airport.class);
+        Airport destinationAirport = restTemplate.getForObject("http://airport/airports/"+ flight.getDestination(), Airport.class);
 
         List<Airport> airports = new ArrayList<>();
         airports.add(originAirport);
